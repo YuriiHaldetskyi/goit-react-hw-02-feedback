@@ -1,24 +1,18 @@
 import css from '../FeedBackOptions/feedbackoptions.module.css';
-export const FeedbackOptions = ({
-  onHandleInrementGood,
-  onHandleInrementNeutral,
-  onHandleInrementBad,
-}) => {
+export const FeedbackOptions = ({ options, onChange }) => {
   return (
     <div className={css.wrapper}>
-      <button className={css.btn} type="button" onClick={onHandleInrementGood}>
-        Good
-      </button>
-      <button
-        className={css.btn}
-        type="button"
-        onClick={onHandleInrementNeutral}
-      >
-        Neutral
-      </button>
-      <button className={css.btn} type="button" onClick={onHandleInrementBad}>
-        Bad
-      </button>
+      {options.map(option => (
+        <button
+          key={option}
+          type="button"
+          name={option}
+          onClick={onChange}
+          className={css.btn}
+        >
+          {option}
+        </button>
+      ))}
     </div>
   );
 };
