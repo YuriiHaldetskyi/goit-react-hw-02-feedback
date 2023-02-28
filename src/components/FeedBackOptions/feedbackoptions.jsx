@@ -7,7 +7,7 @@ export const FeedbackOptions = ({ options, onChange }) => {
           key={option}
           type="button"
           name={option}
-          onClick={onChange}
+          onClick={() => onChange(option)}
           className={css.btn}
         >
           {option}
